@@ -7,6 +7,8 @@ import Home from "../home/Home";
 import About from "../components/About";
 import Blog from "../components/Blog";
 import Shop from "../components/shop/Shop";
+import SingleBook from "../components/shop/SingleBook";
+import { useEffect } from "react";
 
 
   const router = createBrowserRouter([
@@ -29,7 +31,12 @@ import Shop from "../components/shop/Shop";
           {
             path: "/blog",
             element: <Blog/>
-          }
+          },
+          {
+            path: "/book/:id",
+          element: <SingleBook/>,
+          loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
+        }
       ]
     },
   ]);

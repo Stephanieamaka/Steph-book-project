@@ -6,7 +6,7 @@ import { FaBars, FaBarsStaggered, FaBlog, FaXmark } from "react-icons/fa6";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isSticky, setSticky } = useState(false);
+  const [ isSticky, setIsSticky ] = useState(false);
 
   // toggle menu
   const toggleMenu = () => {
